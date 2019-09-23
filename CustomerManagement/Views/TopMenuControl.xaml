@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="CustomerManagement.Views.TopMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p = "clr-namespace:CustomerManagement.Properties"
+             xmlns:vm="clr-namespace:CustomerManagement.ViewModel">
+
+    <UserControl.DataContext>
+        <vm:TopMenuViewModel />
+    </UserControl.DataContext>
+
+    <Menu>
+        <MenuItem Header="{x:Static p:Resources.File}">
+            <MenuItem Header="{x:Static p:Resources.New_Customer}" Command="{Binding NewCustomerCommand}"/>
+            <MenuItem Header="{x:Static p:Resources.Find_Customer}" Command="{Binding FindCustomerCommand}"/>
+            <MenuItem Header="{x:Static p:Resources.List_Customer}" Command="{Binding ListCustomersCommand}"/>
+            <Separator />
+            <MenuItem Header="{x:Static p:Resources.Exit}" Command="{Binding ExitCommand}"/>
+        </MenuItem>
+    </Menu>
+    
+     
+    
+</UserControl>
